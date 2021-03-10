@@ -54,8 +54,8 @@ public class PhoneBookImpl implements PhoneBook {
         return null;
     }
 
-    private void printPhoneBook() {
-        for (Person person : this.people) {
+    private void printPhoneBook(List<Person> phoneBook) {
+        for (Person person : phoneBook) {
             System.out.println(person);
         }
     }
@@ -74,7 +74,7 @@ public class PhoneBookImpl implements PhoneBook {
         phoneBook.addPerson(secondPerson);
 
         //print the phone book out to System.out
-        phoneBook.printPhoneBook();
+        phoneBook.printPhoneBook(phoneBook.allPerson());
 
         // find Cynthia Smith and print out just her entry
         Person cynthia = phoneBook.findPerson("Cynthia", "Smith");
